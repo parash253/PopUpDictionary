@@ -12,37 +12,50 @@
         <!-- Navbar -->
         <div class="navbar">
             <div class="dropdown">
-                <span class="material-icons">menu</span>
+                <span class="material-icons" style="font-size: 50px;">settings</span>
+                <!-- <span class="material-icons">settings</span> -->
                 <div class="dropdown-content" style="min-width: 160px;">
-                    <a href="#" class="dropdown-item">Item 1</a>
-                    <a href="#" class="dropdown-item">Item 2</a>
-                    <a href="#" class="dropdown-item">Item 3</a>
-                    <a href="#" class="dropdown-item">Item 4</a>
+                    <a href="#" class="dropdown-item"><h2>Dark mode</h2></a>
+                    <a href="#" class="dropdown-item"><h2>Screen Reader</h2></a>
+                    <!-- <a href="#" class="dropdown-item">Item 3</a> -->
+                    <!-- <a href="#" class="dropdown-item">Item 4</a> -->
                 </div>
             </div>
-            <div>
+            <!-- <div>
                 <h3 id="Topic"></h3>
-            </div>
+            </div> -->
             <div style="display: flex;align-items: center;">
-                <div style="display: flex;border-radius: 50px; border: 1.8px solid #eeebeb; padding: 1px;">
+                <div class="dropdown" style="display: flex;align-items: center; border-radius: 5px; border: 3px solid #eeebeb; padding: 1px;">
                     <div class="circular-icon">
                         <img src="1.png" alt="Icon" />
                     </div>
-                    <div class="dropdown">
+                    <div>
                         <span class="material-icons">keyboard_arrow_down</span>
-                        <div class="dropdown-content" style="right: 10%;">
-                            <a href="#" class="dropdown-item">Item 1</a>
-                            <a href="#" class="dropdown-item">Item 2</a>
-                            <a href="#" class="dropdown-item">Item 3</a>
-                            <a href="#" class="dropdown-item">Item 4</a>
+                        <div class="dropdown-content" style="min-width: 160px; right: 10%;">
+                            <a href="#" class="dropdown-item" style="display: flex; align-items: center; justify-content: space-between;">
+                                <h2>Spanish</h2>
+                                <div class="circular-icon"><img src="2.png" alt="Icon"/></div>
+                            </a>
+                            <a href="#" class="dropdown-item" style="display: flex; align-items: center; justify-content: space-between;">
+                                <h2>Nepalese</h2>
+                                <div class="circular-icon"><img src="Nepal.png" alt="Icon"/></div>
+                            </a>
+                            <a href="#" class="dropdown-item" style="display: flex; align-items: center; justify-content: space-between;">
+                                <h2>Chinese</h2>
+                                <div class="circular-icon"><img src="3.png" alt="Icon"/></div>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <span class="material-icons">volume_up</span>
+                <!-- <span class="material-icons">volume_up</span> -->
             </div>
-        </div>
+        </div> 
 
         <div style="padding: 10px;">
+            <div style="display: flex;justify-content: space-between; align-items: center;">
+                <h1 style="font-size: 40px; margin: 0; "><u id="Topic"></u></h1>
+                <span style="font-size: 50px;" class="material-icons">volume_up</span>
+            </div>
             <div id="definition-container"></div>
         </div>
     </body>

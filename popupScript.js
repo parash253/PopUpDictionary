@@ -14,7 +14,7 @@
         });
 
     function displayDefinition(data) {
-        document.getElementById("Topic").innerHTML = "Word: " + word;
+        document.getElementById("Topic").innerHTML = word;
 
         const definitionContainer = document.getElementById("definition-container");
 
