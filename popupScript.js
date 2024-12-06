@@ -36,7 +36,7 @@
                     // If there's an example, show it too
                     if (definitionObj.example) {
                         let exampleElement = document.createElement("p");
-                        exampleElement.textContent = `Example: "${definitionObj.example}"`;
+                        exampleElement.textContent = `==> Example: "${definitionObj.example}"`;
                         definitionContainer.appendChild(exampleElement);
                     }
 
