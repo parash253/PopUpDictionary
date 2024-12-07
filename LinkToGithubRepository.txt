@@ -1,1 +1,0 @@
-LinkToGithubRepository: https://github.com/parash253/PopUpDictionary
