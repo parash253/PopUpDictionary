@@ -15,7 +15,7 @@
 
     },
     "browser_action": {
-        "default_icon": "ct1.png",
+        "default_icon": "ExtensionIcon.png",
         "default_popup":"popup.html",
         "default_title": "Here is the Definition"
     }
