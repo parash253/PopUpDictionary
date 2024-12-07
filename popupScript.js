@@ -9,6 +9,47 @@ function toggleDarkMode() {
     }
 }
 
+function toggleScreenReader() {
+    const currentStatus = localStorage.getItem("screenReader") || "disabled"; 
+
+    if (currentStatus === "enabled") {
+        document.body.classList.remove("screen-reader-enabled");
+        document.getElementById("definition-container").removeAttribute("aria-live");
+        localStorage.setItem("screenReader", "disabled");
+        speak("Screen reader mode disabled.");
+    } else {
+        document.body.classList.add("screen-reader-enabled");
+        document.getElementById("definition-container").setAttribute("aria-live", "assertive");
+        localStorage.setItem("screenReader", "enabled");
+        speak("Screen reader mode enabled.");
+    }
+}
+
+function speak(text) {
+    if ('speechSynthesis' in window) {
+        const utterance = new SpeechSynthesisUtterance(text);
+        speechSynthesis.speak(utterance);
+    } else {
+        console.error("Speech synthesis not supported in this browser.");
+    }
+}
+
+function handleElementClick(event) {
+    const isScreenReaderEnabled = localStorage.getItem("screenReader") === "enabled";
+
+    if (isScreenReaderEnabled) {
+        const clickedElement = event.target;
+
+        if (clickedElement) {
+            const textContent = clickedElement.textContent || clickedElement.innerText;
+
+            if (textContent.trim() !== "") {
+                speak(textContent);
+            }
+        }
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const savedTheme = localStorage.getItem("darkMode");
     if (savedTheme === "enabled") {
@@ -26,7 +67,18 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         console.error('Dark mode toggle checkbox not found!');
     }
+
+    const screenReaderToggle = document.getElementById("screenReaderToggle");
+    if (screenReaderToggle) {
+        toggleElement.addEventListener("change", toggleDarkMode);
+        screenReaderToggle.addEventListener("change", toggleScreenReader);
+    } else {
+        console.error('Screen reader toggle checkbox not found!');
+    }
+
+    document.body.addEventListener("click", handleElementClick);
 });
+
 (function setup() {
     let bgpage = chrome.extension.getBackgroundPage();
     let word = bgpage.word;
