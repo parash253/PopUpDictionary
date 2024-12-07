@@ -1,6 +1,12 @@
 function toggleDarkMode() {
     document.body.classList.toggle("dark");
     const isDarkMode = document.body.classList.contains("dark");
+
+    if (isDarkMode) {
+        localStorage.setItem("darkMode", "enabled");
+    } else {
+        localStorage.setItem("darkMode", "disabled");
+    }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -8,6 +14,17 @@ document.addEventListener("DOMContentLoaded", () => {
     if (savedTheme === "enabled") {
         document.body.classList.add("dark");
         document.getElementById("darkModeToggle").checked = true;
+        const toggleElement = document.getElementById("darkModeToggle");
+        if (toggleElement) {
+            toggleElement.checked = true;
+        }
+    }
+
+    const toggleElement = document.getElementById("darkModeToggle");
+    if (toggleElement) {
+        toggleElement.addEventListener("change", toggleDarkMode);
+    } else {
+        console.error('Dark mode toggle checkbox not found!');
     }
 });
 (function setup() {
