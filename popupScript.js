@@ -94,6 +94,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     function displayDefinition(data) {
+        //implement something that makes so that on clicking the speaker, 
+        //speechSynthesis will give you a word definition
+        //or use an API
+
+        //maybe https://play.ht/text-to-speech-api/?
         document.getElementById("Topic").innerHTML = word;
 
         const definitionContainer = document.getElementById("definition-container");
