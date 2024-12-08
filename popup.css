@@ -6,8 +6,8 @@ body {
 
 /* dark mode colors*/
 body.dark {
-        background-color: black;
-        color: white;
+    background-color: black;
+    color: white;
 }
 
 /* Navbar styling */
@@ -98,6 +98,10 @@ body.dark {
     background-color: white;
     transition: 0.4s;
     border-radius: 50%;
+}
+
+.speaker {
+
 }
 
 input:checked + .slider {

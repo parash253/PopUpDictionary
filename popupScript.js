@@ -25,6 +25,17 @@ function toggleScreenReader() {
     }
 }
 
+function pronunciationClick() {
+    const word = document.getElementById("Topic").textContent.trim();
+    if (word) {
+        //make it so that while speak, pulsate or show some visual indicator like
+        //changing opacity
+        speak(word);
+    } else {
+        console.error("No word found in the Topic element.");
+    }
+}
+
 function speak(text) {
     if ('speechSynthesis' in window) {
         const utterance = new SpeechSynthesisUtterance(text);
@@ -70,10 +81,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const screenReaderToggle = document.getElementById("screenReaderToggle");
     if (screenReaderToggle) {
-        toggleElement.addEventListener("change", toggleDarkMode);
         screenReaderToggle.addEventListener("change", toggleScreenReader);
     } else {
         console.error('Screen reader toggle checkbox not found!');
+    }
+
+    const volumeIcon = document.getElementById("speaker");
+    if (volumeIcon) {
+        volumeIcon.addEventListener("click", pronunciationClick);
     }
 
     document.body.addEventListener("click", handleElementClick);
