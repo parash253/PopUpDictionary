@@ -12,11 +12,11 @@
         <!-- Navbar -->
         <div class="navbar">
             <div class="dropdown">
-                <span class="material-icons" style="font-size: 50px;">settings</span>
+                <span class="material-icons" style="font-size: 40px;">settings</span>
                 <div class="dropdown-content" style="min-width: 160px;">
                     <a href="#" class="dropdown-item">
                         <div class="toggle-container">
-                            <h2>Dark Mode</h2>
+                            <h3>Dark Mode</h3>
                             <label class="toggle">
                                 <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
                                 <span class="slider"></span>
@@ -25,7 +25,7 @@
                     </a>
                     <a href="#" class="dropdown-item">
                         <div class="toggle-container">
-                            <h2>Screen Reader</h2>
+                            <h3>Screen Reader</h3>
                             <label class="toggle">
                                 <input type="checkbox" id="screenReaderToggle" onchange="toggleScreenReader()">
                                 <span class="slider"></span>
@@ -35,7 +35,9 @@
                 </div>
             </div>
 
-            <div style="display: flex;align-items: center;">
+            <!-- Not sure if this should stay or not -->
+
+            <!-- <div style="display: flex;align-items: center;">
                 <div class="dropdown" style="display: flex;align-items: center; border-radius: 5px; border: 3px solid #eeebeb; padding: 1px;">
                     <div class="circular-icon">
                         <img src="English.png" alt="Icon" />
@@ -58,13 +60,13 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div> 
 
         <div style="padding: 10px;">
             <div style="display: flex;justify-content: space-between; align-items: center;">
                 <div id="Topic"></div>
-                <span style="font-size: 50px;" id="speaker" class="material-icons" onclick="pronunciationClick()">volume_up</span> <!-- Add something that on-click makes this do speechSynthesis -->
+                <span style="font-size: 40px;" id="speaker" class="material-icons" onclick="pronunciationClick()">volume_up</span> <!-- Add something that on-click makes this do speechSynthesis -->
             </div>
             <div id="definition-container"></div>
         </div>
